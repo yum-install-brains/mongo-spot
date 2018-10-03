@@ -129,7 +129,7 @@ problem is that it’s possible that the other three members didn’t go down, a
 network that went down, as shown in Figure 9-2. In this case, the three members on the left will
 elect a primary, since they can reach a majority of the set (three members out of five).
 
-![mongo majority](/home/itolya/Pictures/mongo-majority.png)
+![mongo majority](mongo-majority.png)
 
 In the case of a network partition, we do not want both sides of the partition to elect a primary:
 otherwise the set would have two primaries. Then both primaries would be writing to the data
@@ -237,7 +237,7 @@ them.
 
 To configure a delayed secondary member, set its members[n].priority value to 0, its members[n].hidden value to true, and its members[n].slaveDelay value to the number of seconds to delay.
 
-The following example sets a 1-hour delay on a secondary member currently at the index 0 in the members array. 
+The following example sets a 1-hour delay on a secondary member currently at the index 0 in the members array.
 ```js
 cfg = rs.conf()
 cfg.members[0].priority = 0
